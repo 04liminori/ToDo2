@@ -29,5 +29,13 @@ class Task: Object {
         self.date = date
         self.time = time
     }
-        
+    
+    //全部とってくる let tasks = Task.findAll()
+//    static func findAll() -> [Task] {
+//        let realm = RealmFactory.sharedInstance.realm()
+//        let checkins = realm.objects(Task)
+//        return (checkins.map { $0 })
+//    }
+
+    
 }

@@ -7,9 +7,9 @@
 //
 
 import UIKit
-var todoItem = [String]()
+import RealmSwift
 
-class AddToDoViewController: UIViewController, UITableViewDelegate {
+class AddToDoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var addButton: UIButton!
@@ -17,14 +17,25 @@ class AddToDoViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var timePicker: UIDatePicker!//通知の時間設定
     @IBOutlet weak var addTabBar: UITabBarItem!
     
+    
     let date = Date()
-    let cal = Calendar.current
     let weeks = ["日曜","月曜","火曜","水曜","木曜","金曜","土曜"]
+    // モデル作成
+    let task = Task(value: ["id" : "", "name" : "", "finished": false, "date" : "", "time" : "HH:mm"])
+    // デフォルトRealmを取得する
+    let realm = try! Realm()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         youbiTable.delegate = self
+        textField.delegate = self
+        
+        // トランザクションを開始して、オブジェクトをRealmに追加する
+        try! realm.write {
+            realm.add(task)
+            
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -39,9 +50,8 @@ class AddToDoViewController: UIViewController, UITableViewDelegate {
         return weeks.count
     }
     // セルのテキストを追加
-    private func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "Cell")
-        
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "youbiCell")
         cell.textLabel?.text = weeks[indexPath.row]
         return cell
     }
@@ -51,50 +61,56 @@ class AddToDoViewController: UIViewController, UITableViewDelegate {
         print(weeks[indexPath.row])
     }
     
-    private func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    internal func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section < 1 {
-            return "Check List"
+            return "通知する曜日"
         }
         return nil
     }
     
-    //テキスト入れる
-    @IBAction func addItem(sender: AnyObject) {
-        todoItem.append(textField.text!)
-        textField.text = ""
-        UserDefaults.standard.set(todoItem, forKey: "todoList")
+    //キーボード以外タップでキーボード閉じる
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //非表示にする。
+        if(textField.isFirstResponder){
+            textField.resignFirstResponder()
+        }
     }
     
-    //キーボード以外タップでキーボード閉じる
-    @IBAction func tapScreen(sender: UITapGestureRecognizer) {
-        self.view.endEditing(true)
-    }
     //改行でキーボード閉じる
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        
+    // キーボードを閉じる
         textField.resignFirstResponder()
+        
         return true
     }
     
-    @IBAction func addTask(_ sender: AnyObject) {
+    func addTask(_ sender: AnyObject) {
         if textField.text == "" {
             let alertController = UIAlertController(title: "タイトルを入力してください", message: "", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
- /*       } else {
-            Task(id: Task.findAll().count+1, name: textField.text!, done: false , date: "").save()
+        } else {
+ /*           task(id: Task.findAll().count+1, name: textField.text!, finished: false , date: "" , time: "HH:mm").save()
             
             let alertController = UIAlertController(title: "タスクを追加しました。", message: "", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(defaultAction)
             textField.text = ""
-            present(alertController, animated: true, completion: nil) */
+            present(alertController, animated: true, completion: nil)
         }
-        print("test: addTask pushed")
+        print("test: addTask pushed")*/
+            let task = Task()
+            task.name = textField.text!
+            task.finished = false
+            task.date = ""
+            task.time = "HH:mm"
+            
+        }
     }
 
-
-    @IBAction func timePicker(_ sender: AnyObject) {
+    func timePicker(_ sender: AnyObject) {
         print("test: timePicker moved")
         // DPの値を成形
         let format = DateFormatter()
