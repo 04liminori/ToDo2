@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		420A6AFC1EE83188009404BF /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429417431EE2E56D0014962C /* Realm.framework */; };
+		420A6AFD1EE8318C009404BF /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429417451EE2E5700014962C /* RealmSwift.framework */; };
 		4221DF661EE2DD6C00222436 /* Pods_ToDo2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4221DF631EE2DD6C00222436 /* Pods_ToDo2.framework */; };
 		429115C91ED2431900D1B823 /* WeekTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429115C81ED2431900D1B823 /* WeekTasksViewController.swift */; };
 		429115CB1ED2436300D1B823 /* TodayTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429115CA1ED2436300D1B823 /* TodayTasksViewController.swift */; };
 		429115D31ED63A4F00D1B823 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429115D21ED63A4F00D1B823 /* Task.swift */; };
 		429115D51ED6D80800D1B823 /* TodayTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429115D41ED6D80800D1B823 /* TodayTaskTableViewCell.swift */; };
-		429417441EE2E56D0014962C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429417431EE2E56D0014962C /* Realm.framework */; };
-		429417461EE2E5700014962C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429417451EE2E5700014962C /* RealmSwift.framework */; };
 		42ECD85F1ECD971400E1E027 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECD85E1ECD971400E1E027 /* AppDelegate.swift */; };
 		42ECD8641ECD971400E1E027 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42ECD8621ECD971400E1E027 /* Main.storyboard */; };
 		42ECD8661ECD971400E1E027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42ECD8651ECD971400E1E027 /* Assets.xcassets */; };
@@ -91,8 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				429417461EE2E5700014962C /* RealmSwift.framework in Frameworks */,
-				429417441EE2E56D0014962C /* Realm.framework in Frameworks */,
+				420A6AFD1EE8318C009404BF /* RealmSwift.framework in Frameworks */,
+				420A6AFC1EE83188009404BF /* Realm.framework in Frameworks */,
 				4221DF661EE2DD6C00222436 /* Pods_ToDo2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +270,7 @@
 				TargetAttributes = {
 					42ECD85A1ECD971400E1E027 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = PK5W92DG95;
 						ProvisioningStyle = Automatic;
 					};
 					42ECD86E1ECD971400E1E027 = {
@@ -349,14 +350,14 @@
 		};
 		4221DF621EE2D82800222436 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\" ";
 		};
@@ -422,7 +423,7 @@
 		};
 		A44CF0ED574AA9BD86EE1E03 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -430,10 +431,9 @@
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ToDo2/Pods-ToDo2-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"";
 		};
 		A57FF9476CCCE73F35543856 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -644,11 +644,10 @@
 			baseConfigurationReference = 22AA3A779FB2AF19BFD5397D /* Pods-ToDo2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				DEVELOPMENT_TEAM = PK5W92DG95;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ToDo2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.minori.ToDo2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -661,11 +660,10 @@
 			baseConfigurationReference = CC6CC147269AC3F7096D77DE /* Pods-ToDo2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				DEVELOPMENT_TEAM = PK5W92DG95;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ToDo2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.minori.ToDo2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -679,6 +677,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ToDo2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.minori.ToDo2Tests;
@@ -694,6 +693,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ToDo2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.minori.ToDo2Tests;

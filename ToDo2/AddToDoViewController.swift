@@ -85,7 +85,7 @@ class AddToDoViewController: UIViewController, UITableViewDelegate, UITableViewD
         return true
     }
     
-    func addTask(_ sender: AnyObject) {
+    @IBAction func addTask(_ sender: AnyObject) {
         if textField.text == "" {
             let alertController = UIAlertController(title: "タイトルを入力してください", message: "", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
