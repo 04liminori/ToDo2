@@ -15,9 +15,7 @@ class TodayTasksViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var tasks: [Task] = []
     
-    @IBOutlet weak var titleBar: UINavigationBar!
     @IBOutlet weak var taskTable: UITableView!
-    @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var todayTabBar: UITabBarItem!
 
     override func viewDidLoad() {

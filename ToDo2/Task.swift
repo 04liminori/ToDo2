@@ -11,7 +11,7 @@ import RealmSwift
 
 class Task: Object {
     
-    dynamic var id = 0
+    dynamic var id = ""
     dynamic var name = ""
     dynamic var finished = false //タスクが終わったか
     dynamic var date = ""//通知する曜日
@@ -23,7 +23,7 @@ class Task: Object {
     // MARK: - Publics
     convenience init(id: Int, name: String, finished: Bool, date: String, time: String) {
         self.init()
-        self.id = id
+        self.id = ""
         self.name = name
         self.finished = finished
         self.date = date

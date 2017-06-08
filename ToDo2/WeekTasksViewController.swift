@@ -11,7 +11,6 @@ import  RealmSwift
 
 class WeekTasksViewController: UIViewController {
 
-    @IBOutlet weak var titleBarW: UINavigationBar!
     @IBOutlet weak var weekTaskTable: UITableView!
     @IBOutlet weak var weekTabBar: UITabBarItem!
     
