@@ -11,9 +11,7 @@ import RealmSwift
 
 class TodayTaskTableViewCell: UITableViewCell {
     
-    var tasks: [Task] = []
-    
-    let task = [Task]()
+    let tasks = Task.loadAll()
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!

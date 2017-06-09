@@ -21,9 +21,9 @@ class AddToDoViewController: UIViewController, UITableViewDelegate, UITableViewD
     let date = Date()
     let weeks = ["日曜","月曜","火曜","水曜","木曜","金曜","土曜"]
     // モデル作成
-    let task = Task(value: ["id" : "", "name" : "", "finished": false, "date" : "", "time" : "HH:mm"])
+    let task = Task(value: ["id" : Int(), "name" : "", "finished": false, "date" : "", "time" : "HH:mm"])
     // デフォルトRealmを取得する
-    let realm = try! Realm()
+    var realm = try! Realm()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +32,10 @@ class AddToDoViewController: UIViewController, UITableViewDelegate, UITableViewD
         textField.delegate = self
         
         // トランザクションを開始して、オブジェクトをRealmに追加する
-        try! realm.write {
+        /*try! realm.write {
             realm.add(task)
             
-        }
+        }*/
 
         // Do any additional setup after loading the view.
     }
@@ -91,23 +91,8 @@ class AddToDoViewController: UIViewController, UITableViewDelegate, UITableViewD
             let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
-        } else {
- /*           task(id: Task.findAll().count+1, name: textField.text!, finished: false , date: "" , time: "HH:mm").save()
-            
-            let alertController = UIAlertController(title: "タスクを追加しました。", message: "", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alertController.addAction(defaultAction)
-            textField.text = ""
-            present(alertController, animated: true, completion: nil)
         }
-        print("test: addTask pushed")*/
-            let task = Task()
-            task.name = textField.text!
-            task.finished = false
-            task.date = ""
-            task.time = "HH:mm"
-            
-        }
+        print("test: addTask pushed")
     }
 
     func timePicker(_ sender: AnyObject) {

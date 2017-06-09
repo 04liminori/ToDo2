@@ -11,8 +11,6 @@ import RealmSwift
 
 class TodayTasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let realm = try! Realm()
-    
     var tasks: [Task] = []
     
     @IBOutlet weak var taskTable: UITableView!
