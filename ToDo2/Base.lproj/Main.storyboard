@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="T63-gP-NJs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="T63-gP-NJs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="todayTaskTable" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JJA-Wt-2jH" customClass="TodayTasksTableViewCell">
-                                <rect key="frame" x="0.0" y="159" width="375" height="459"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="546"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -34,14 +34,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="nameLabel" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hn4-e6-gT7">
-                                                    <rect key="frame" x="140" y="0.0" width="210" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="timeLabel" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iN-mg-Vkk">
-                                                    <rect key="frame" x="26" y="0.0" width="80" height="44"/>
+                                                    <rect key="frame" x="26" y="0.0" width="324" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -60,8 +53,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Today's tasks" id="qxn-te-kLm"/>
-                    <navigationItem key="navigationItem" id="SFL-lp-fUQ"/>
+                    <navigationItem key="navigationItem" title="Today'sTask" id="DbF-O6-3a4">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="iSO-RY-ys1">
+                            <connections>
+                                <segue destination="tyZ-0M-hzO" kind="modal" id="jGG-ao-16C"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="taskTable" destination="JJA-Wt-2jH" id="LRA-wf-dN6"/>
                         <outlet property="todayTabBar" destination="qxn-te-kLm" id="WvI-Ev-VSp"/>
@@ -69,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wmK-az-r7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="363" y="169"/>
+            <point key="canvasLocation" x="1301.5999999999999" y="168.6656671664168"/>
         </scene>
         <!--Add tasks-->
         <scene sceneID="wsG-Aw-Uk4">
@@ -84,62 +82,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C3u-oP-RCx">
-                                <rect key="frame" x="48" y="91" width="277" height="30"/>
+                                <rect key="frame" x="49" y="209" width="277" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aAO-PA-Zbq">
-                                <rect key="frame" x="67" y="141" width="240" height="271"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="youbiCell" id="bdq-8f-d4O">
-                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bdq-8f-d4O" id="EyV-Vh-Ifw">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="tyZ-0M-hzO" id="cth-ZM-LlD"/>
-                                    <outlet property="delegate" destination="tyZ-0M-hzO" id="2GP-HW-e1c"/>
-                                </connections>
-                            </tableView>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JCe-8b-XWS">
-                                <rect key="frame" x="-1" y="420" width="375" height="125"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="518194394.72788799">
-                                    <!--2017-06-03 14:53:14 +0000-->
-                                </date>
-                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M17-Oq-2bb">
-                                <rect key="frame" x="126" y="553" width="123" height="57"/>
+                                <rect key="frame" x="126" y="352" width="123" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="add!"/>
                                 <connections>
-                                    <action selector="addTask:" destination="tyZ-0M-hzO" eventType="touchUpInside" id="kLc-ey-ZUh"/>
+                                    <action selector="addTask:" destination="tyZ-0M-hzO" eventType="touchUpInside" id="Rhy-ye-ZkI"/>
+                                    <segue destination="SNX-Ac-Gh7" kind="modal" id="qgA-5a-j1Q"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gMH-79-1gH">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="AddToday'sTask" id="tYS-Lk-hWb">
+                                        <barButtonItem key="backBarButtonItem" title="back" id="pKu-yB-4FN"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="3" title="Add task" id="tLM-T6-lKK"/>
                     <navigationItem key="navigationItem" id="Px5-ii-e8n"/>
                     <connections>
                         <outlet property="addButton" destination="M17-Oq-2bb" id="W7R-Yt-Pxw"/>
-                        <outlet property="addTabBar" destination="tLM-T6-lKK" id="JPV-Xv-Aw7"/>
                         <outlet property="textField" destination="C3u-oP-RCx" id="0sx-MW-mEG"/>
-                        <outlet property="timePicker" destination="JCe-8b-XWS" id="CeJ-oQ-pzq"/>
-                        <outlet property="youbiTable" destination="aAO-PA-Zbq" id="o70-Z8-AOi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ix-Cq-Yh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="362.5" y="1020.5"/>
+            <point key="canvasLocation" x="2244" y="169"/>
         </scene>
         <!--Week tasks-->
         <scene sceneID="s1G-yl-Njh">
@@ -153,16 +131,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="weekTaskTable" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NZJ-0X-he9">
-                                <rect key="frame" x="0.0" y="28" width="375" height="590"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="weekTaskTable" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="43" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NZJ-0X-he9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="weekTaskCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="weekTableCell" id="vZ5-37-cbu">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="weekTaskCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="weekTableCell" rowHeight="43" id="vZ5-37-cbu">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vZ5-37-cbu" id="z8f-82-ZVN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="42.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -171,7 +149,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Week tasks" id="xgo-Sg-LVu"/>
+                    <navigationItem key="navigationItem" title="ThisWeekTask" id="q3r-hB-XtP">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="Cud-dr-geY">
+                            <connections>
+                                <segue destination="NtW-LN-F7a" kind="modal" id="k4a-Mf-kYz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="weekTabBar" destination="xgo-Sg-LVu" id="SEZ-N2-fMy"/>
                         <outlet property="weekTaskTable" destination="NZJ-0X-he9" id="Q7O-bq-MhQ"/>
@@ -179,7 +163,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="muy-RM-goF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="363" y="-623"/>
+            <point key="canvasLocation" x="1301.5999999999999" y="-623.83808095952031"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="95Q-pq-oya">
+            <objects>
+                <viewController id="NtW-LN-F7a" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i7R-MX-oHH"/>
+                        <viewControllerLayoutGuide type="bottom" id="vP9-q1-Rbe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kaZ-dN-ZIS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66i-M1-kRN">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="AddThisWeekTask" id="710-PI-gM4">
+                                        <barButtonItem key="backBarButtonItem" title="back" id="yVt-Oj-Rj9"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ly1-RH-SVb">
+                                <rect key="frame" x="66" y="197" width="243" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJg-f7-ngE">
+                                <rect key="frame" x="136" y="352" width="103" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <segue destination="uEP-uh-KEM" kind="modal" id="PXd-8L-Vox"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7VX-yP-sbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2165.5999999999999" y="-624.73763118440786"/>
         </scene>
         <!--TabBar-->
         <scene sceneID="D8B-Zj-ZvY">
@@ -192,14 +220,55 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="uEP-uh-KEM" kind="relationship" relationship="viewControllers" id="FAi-FN-JMW"/>
-                        <segue destination="SNX-Ac-Gh7" kind="relationship" relationship="viewControllers" id="7jF-JU-Rk7"/>
-                        <segue destination="tyZ-0M-hzO" kind="relationship" relationship="viewControllers" id="9Le-fV-FcX"/>
+                        <segue destination="XuG-G9-cuT" kind="relationship" relationship="viewControllers" id="FAi-FN-JMW"/>
+                        <segue destination="9VO-OG-gMf" kind="relationship" relationship="viewControllers" id="7jF-JU-Rk7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVE-Jz-QRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-692" y="169"/>
         </scene>
+        <!--Today's tasks-->
+        <scene sceneID="tLi-ss-TPO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9VO-OG-gMf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="1" title="Today's tasks" id="qxn-te-kLm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="r9D-8X-crr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SNX-Ac-Gh7" kind="relationship" relationship="rootViewController" id="Tyj-ic-yIq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="148-9u-BSx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="362.39999999999998" y="168.6656671664168"/>
+        </scene>
+        <!--Week tasks-->
+        <scene sceneID="BUm-ZO-nKT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XuG-G9-cuT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="2" title="Week tasks" id="xgo-Sg-LVu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GhA-nm-Ubv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uEP-uh-KEM" kind="relationship" relationship="rootViewController" id="0oA-KR-JQi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4b-3s-KA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="362.39999999999998" y="-623.83808095952031"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qgA-5a-j1Q"/>
+        <segue reference="PXd-8L-Vox"/>
+    </inferredMetricsTieBreakers>
 </document>

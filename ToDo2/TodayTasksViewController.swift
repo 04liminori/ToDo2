@@ -11,7 +11,11 @@ import RealmSwift
 
 class TodayTasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var tasks: [Task] = []
+    var tasks: Array<Any> {
+        get {
+            return Task.loadAll()
+        }
+    }
     
     @IBOutlet weak var taskTable: UITableView!
     @IBOutlet weak var todayTabBar: UITabBarItem!
@@ -36,12 +40,8 @@ class TodayTasksViewController: UIViewController, UITableViewDelegate, UITableVi
         
         // セルを取得
         let cell = tableView.dequeueReusableCell(withIdentifier: "todayTasksCell") as! TodayTaskTableViewCell
-        
-        // セルに値を設定
-        //cell.timeLabel.text = Task.time[indexPath.row]
-        //cell.nameLabel.text = Task.name[indexPath.row]
-        
-        return cell
+            //cell.textLabel?.text = tasks.name
+            return cell
         
     }
 

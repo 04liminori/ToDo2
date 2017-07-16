@@ -14,7 +14,6 @@ class TodayTaskTableViewCell: UITableViewCell {
     let tasks = Task.loadAll()
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -9,26 +9,19 @@
 import UIKit
 import RealmSwift
 
-class AddToDoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class AddToDoViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var youbiTable: UITableView!//タスクを繰り返す曜日の選択
-    @IBOutlet weak var timePicker: UIDatePicker!//通知の時間設定
-    @IBOutlet weak var addTabBar: UITabBarItem!
-    
-    
+
     let date = Date()
-    let weeks = ["日曜","月曜","火曜","水曜","木曜","金曜","土曜"]
-    // モデル作成
-    let task = Task(value: ["id" : Int(), "name" : "", "finished": false, "date" : "", "time" : "HH:mm"])
+    let task = Task(value: ["id" : Int(), "name" : "", "finished": false])
     // デフォルトRealmを取得する
     var realm = try! Realm()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        youbiTable.delegate = self
+    
         textField.delegate = self
         
         // トランザクションを開始して、オブジェクトをRealmに追加する
@@ -43,29 +36,6 @@ class AddToDoViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    // セルの行数
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weeks.count
-    }
-    // セルのテキストを追加
-    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "youbiCell")
-        cell.textLabel?.text = weeks[indexPath.row]
-        return cell
-    }
-    
-    // 7. セルがタップされた時
-    func tableView(_ table: UITableView, didSelectRowAt indexPath:IndexPath) {
-        print(weeks[indexPath.row])
-    }
-    
-    internal func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section < 1 {
-            return "通知する曜日"
-        }
-        return nil
     }
     
     //キーボード以外タップでキーボード閉じる
@@ -91,16 +61,22 @@ class AddToDoViewController: UIViewController, UITableViewDelegate, UITableViewD
             let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
+        } else {
+            func save() {
+                try! Task.realm.write {
+                    Task.realm.add(task)
+                    
+                    func update(method: (() -> Void)) {
+                        try! Task.realm.write {
+                            method()
+                        }
+                    }
+                }
+                print("test: addTask pushed")
+            }
         }
-        print("test: addTask pushed")
     }
-
-    func timePicker(_ sender: AnyObject) {
-        print("test: timePicker moved")
-        // DPの値を成形
-        let format = DateFormatter()
-        format.dateFormat = "HH:mm"
-    }
+    
 
     /*
     // MARK: - Navigation

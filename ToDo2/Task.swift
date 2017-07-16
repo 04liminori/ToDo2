@@ -15,20 +15,16 @@ class Task: Object {
     dynamic var id = 0
     dynamic var name = ""
     dynamic var finished = false //タスクが終わったか
-    dynamic var date = ""//通知する曜日
-    dynamic var time = "HH:mm"//通知する時間
     
     override static func primaryKey() -> String {
         return "id"
     }
     // MARK: - Publics
-    convenience init(id: Int, name: String, finished: Bool, date: String, time: String) {
+    convenience init(id: Int, name: String, finished: Bool) {
         self.init()
         self.id = 0
         self.name = name
         self.finished = finished
-        self.date = date
-        self.time = time
     }
     
     static func create() -> Task{
