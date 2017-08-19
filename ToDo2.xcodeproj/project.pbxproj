@@ -10,9 +10,10 @@
 		420A6AFC1EE83188009404BF /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429417431EE2E56D0014962C /* Realm.framework */; };
 		420A6AFD1EE8318C009404BF /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429417451EE2E5700014962C /* RealmSwift.framework */; };
 		4221DF661EE2DD6C00222436 /* Pods_ToDo2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4221DF631EE2DD6C00222436 /* Pods_ToDo2.framework */; };
+		422217E11F28B65800C9731C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422217E01F28B65800C9731C /* Task.swift */; };
+		423D5C201F48794400ECABEC /* WTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D5C1F1F48794400ECABEC /* WTaskTableViewCell.swift */; };
 		429115C91ED2431900D1B823 /* WeekTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429115C81ED2431900D1B823 /* WeekTasksViewController.swift */; };
 		429115CB1ED2436300D1B823 /* TodayTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429115CA1ED2436300D1B823 /* TodayTasksViewController.swift */; };
-		429115D31ED63A4F00D1B823 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429115D21ED63A4F00D1B823 /* Task.swift */; };
 		429115D51ED6D80800D1B823 /* TodayTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429115D41ED6D80800D1B823 /* TodayTaskTableViewCell.swift */; };
 		42ECD85F1ECD971400E1E027 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECD85E1ECD971400E1E027 /* AppDelegate.swift */; };
 		42ECD8641ECD971400E1E027 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42ECD8621ECD971400E1E027 /* Main.storyboard */; };
@@ -62,9 +63,10 @@
 		4221DF631EE2DD6C00222436 /* Pods_ToDo2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_ToDo2.framework; path = "../../../Library/Developer/Xcode/DerivedData/ToDo2-dfooajmtauxlvgfvqqxuieywjtlo/Build/Products/Debug-iphonesimulator/Pods_ToDo2.framework"; sourceTree = "<group>"; };
 		4221DF641EE2DD6C00222436 /* Pods_ToDo2Tests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_ToDo2Tests.framework; path = "Pods/../build/Debug-iphoneos/Pods_ToDo2Tests.framework"; sourceTree = "<group>"; };
 		4221DF651EE2DD6C00222436 /* Pods_ToDo2UITests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_ToDo2UITests.framework; path = "Pods/../build/Debug-iphoneos/Pods_ToDo2UITests.framework"; sourceTree = "<group>"; };
+		422217E01F28B65800C9731C /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		423D5C1F1F48794400ECABEC /* WTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTaskTableViewCell.swift; sourceTree = "<group>"; };
 		429115C81ED2431900D1B823 /* WeekTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekTasksViewController.swift; sourceTree = "<group>"; };
 		429115CA1ED2436300D1B823 /* TodayTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTasksViewController.swift; sourceTree = "<group>"; };
-		429115D21ED63A4F00D1B823 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		429115D41ED6D80800D1B823 /* TodayTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTaskTableViewCell.swift; sourceTree = "<group>"; };
 		429417431EE2E56D0014962C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../Library/Developer/Xcode/DerivedData/ToDo2-dfooajmtauxlvgfvqqxuieywjtlo/Build/Products/Debug-iphonesimulator/Realm/Realm.framework"; sourceTree = "<group>"; };
 		429417451EE2E5700014962C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/ToDo2-dfooajmtauxlvgfvqqxuieywjtlo/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
@@ -141,11 +143,12 @@
 			isa = PBXGroup;
 			children = (
 				42ECD85E1ECD971400E1E027 /* AppDelegate.swift */,
-				429115D21ED63A4F00D1B823 /* Task.swift */,
+				422217E01F28B65800C9731C /* Task.swift */,
 				429115CA1ED2436300D1B823 /* TodayTasksViewController.swift */,
 				429115D41ED6D80800D1B823 /* TodayTaskTableViewCell.swift */,
 				42ECD88C1ECD9BCC00E1E027 /* AddToDoViewController.swift */,
 				429115C81ED2431900D1B823 /* WeekTasksViewController.swift */,
+				423D5C1F1F48794400ECABEC /* WTaskTableViewCell.swift */,
 				42ECD8621ECD971400E1E027 /* Main.storyboard */,
 				42ECD8651ECD971400E1E027 /* Assets.xcassets */,
 				42ECD8671ECD971400E1E027 /* LaunchScreen.storyboard */,
@@ -487,11 +490,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				423D5C201F48794400ECABEC /* WTaskTableViewCell.swift in Sources */,
 				429115CB1ED2436300D1B823 /* TodayTasksViewController.swift in Sources */,
 				429115C91ED2431900D1B823 /* WeekTasksViewController.swift in Sources */,
 				429115D51ED6D80800D1B823 /* TodayTaskTableViewCell.swift in Sources */,
 				42ECD88D1ECD9BCC00E1E027 /* AddToDoViewController.swift in Sources */,
-				429115D31ED63A4F00D1B823 /* Task.swift in Sources */,
+				422217E11F28B65800C9731C /* Task.swift in Sources */,
 				42ECD85F1ECD971400E1E027 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,6 +652,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/vendor",
+					$,
+					xcodebuild,
+					"-showBuildSettings",
 				);
 				INFOPLIST_FILE = ToDo2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -667,6 +674,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/vendor",
+					$,
+					xcodebuild,
+					"-showBuildSettings",
 				);
 				INFOPLIST_FILE = ToDo2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;

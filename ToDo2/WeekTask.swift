@@ -1,5 +1,5 @@
 //
-//  Task.swift
+//  WeekTask.swift
 //  ToDo2
 //
 //  Created by fukumoriminori on 2017/07/26.
@@ -7,10 +7,7 @@
 //
 
 import UIKit
-import RealmSwift
 
-class Task: Object {
-    dynamic var name = ""
-    dynamic var done = false
+class WeekTask: RLMRealm {
 
 }

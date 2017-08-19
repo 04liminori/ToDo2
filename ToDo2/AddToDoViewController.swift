@@ -9,13 +9,13 @@
 import UIKit
 import RealmSwift
 
-class AddToDoViewController: UIViewController, UITextFieldDelegate {
+class AddToDoViewController: UIViewController, UITextFieldDelegate, UITabBarDelegate {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var addButton: UIButton!
 
     let date = Date()
-    let task = Task(value: ["id" : Int(), "name" : "", "finished": false])
+    let task = Task(value: ["name" : "", "done": false])
     // デフォルトRealmを取得する
     var realm = try! Realm()
 
@@ -63,16 +63,31 @@ class AddToDoViewController: UIViewController, UITextFieldDelegate {
             present(alertController, animated: true, completion: nil)
         } else {
             func save() {
-                try! Task.realm.write {
-                    Task.realm.add(task)
-                    
-                    func update(method: (() -> Void)) {
-                        try! Task.realm.write {
-                            method()
-                        }
-                    }
+                let newTask = Task()
+                
+                // textFieldに入力したデータをnewTodoのtitleに代入
+                newTask.name = textField.text!
+                
+                // 上記で代入したテキストデータを永続化するための処理
+                do{
+                    let realm = try Realm()
+                    try realm.write({ () -> Void in
+                        realm.add(newTask)
+                        print("Task Saved")
+                    })
+                } catch {
+                    print("Save is Faild")
+//                try! Task.realm.write {
+//                    Task.realm.add(task)
+//                    
+//                    func update(method: (() -> Void)) {
+//                        try! Task.realm.write {
+//                            method()
+//                        }
+//                    }
+//                }
+//                print("test: addTask pushed")
                 }
-                print("test: addTask pushed")
             }
         }
     }

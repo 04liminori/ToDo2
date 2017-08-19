@@ -9,9 +9,10 @@
 import UIKit
 import RealmSwift
 
-class WeekTasksViewController: UIViewController {
+class WeekTasksViewController: UIViewController, UITableViewDelegate, UITabBarDelegate {
 
     @IBOutlet weak var weekTaskTable: UITableView!
+    @IBOutlet weak var TabBar: UITabBar!
     @IBOutlet weak var weekTabBar: UITabBarItem!
     
     override func viewDidLoad() {

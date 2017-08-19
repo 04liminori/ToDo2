@@ -1,18 +1,16 @@
 //
-//  TodayTaskTableViewCell.swift
+//  WTaskTableViewCell.swift
 //  ToDo2
 //
-//  Created by fukumoriminori on 2017/05/25.
+//  Created by fukumoriminori on 2017/08/19.
 //  Copyright © 2017年 fukumoriminori. All rights reserved.
 //
 
 import UIKit
 import RealmSwift
 
-class TodayTaskTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var nameLabel: UILabel!
-    
+class WTaskTableViewCell: UITableViewCell {
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -7,19 +7,13 @@
 //
 
 import UIKit
-import RealmSwift
 
-class TodayTasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    var tasks: Array<Any> {
-        get {
-            return Task.loadAll()
-        }
-    }
+class TodayTasksViewController: UIViewController, UITableViewDelegate, UITabBarDelegate {
     
     @IBOutlet weak var taskTable: UITableView!
+    @IBOutlet weak var TabBar: UITabBar!
     @IBOutlet weak var todayTabBar: UITabBarItem!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -31,12 +25,12 @@ class TodayTasksViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     // セルの個数を指定するデリゲートメソッド（必須）
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
-    }
+    //func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //    return Task.count
+    //}
     
     // セルに値を設定するデータソースメソッド（必須）
-    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    @nonobjc internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // セルを取得
         let cell = tableView.dequeueReusableCell(withIdentifier: "todayTasksCell") as! TodayTaskTableViewCell

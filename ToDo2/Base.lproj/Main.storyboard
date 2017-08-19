@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="T63-gP-NJs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SNX-Ac-Gh7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,12 +21,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="todayTaskTable" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JJA-Wt-2jH" customClass="TodayTasksTableViewCell">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="todayTaskTable" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JJA-Wt-2jH">
                                 <rect key="frame" x="0.0" y="72" width="375" height="546"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todayTaskCell" id="Eoc-uV-X34">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todayTaskCell" id="Eoc-uV-X34" customClass="TodayTaskTableViewCell" customModule="ToDo2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eoc-uV-X34" id="Pgf-eG-Nc2">
@@ -50,29 +50,38 @@
                                     <outlet property="delegate" destination="SNX-Ac-Gh7" id="ru9-60-azk"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ba-zP-R0O">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Today'sTask" id="YHr-0q-FyP">
+                                        <barButtonItem key="rightBarButtonItem" title="+" id="96m-eT-dzx">
+                                            <connections>
+                                                <segue destination="tyZ-0M-hzO" kind="show" id="So6-FQ-QI4"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Today'Taks" id="sDh-VJ-9if"/>
                     <navigationItem key="navigationItem" title="Today'sTask" id="DbF-O6-3a4">
-                        <barButtonItem key="rightBarButtonItem" title="+" id="iSO-RY-ys1">
-                            <connections>
-                                <segue destination="tyZ-0M-hzO" kind="modal" id="jGG-ao-16C"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="+" id="iSO-RY-ys1"/>
                     </navigationItem>
                     <connections>
                         <outlet property="taskTable" destination="JJA-Wt-2jH" id="LRA-wf-dN6"/>
-                        <outlet property="todayTabBar" destination="qxn-te-kLm" id="WvI-Ev-VSp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wmK-az-r7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1301.5999999999999" y="168.6656671664168"/>
+            <point key="canvasLocation" x="462" y="169"/>
         </scene>
         <!--Add tasks-->
         <scene sceneID="wsG-Aw-Uk4">
             <objects>
-                <viewController storyboardIdentifier="addToDo" title="Add tasks" id="tyZ-0M-hzO" customClass="AddToDoViewController" customModule="ToDo2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addToDo" title="Add tasks" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tyZ-0M-hzO" customClass="AddToDoViewController" customModule="ToDo2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GJo-AO-Rtr"/>
                         <viewControllerLayoutGuide type="bottom" id="Pe8-uG-F9k"/>
@@ -94,18 +103,9 @@
                                 <state key="normal" title="add!"/>
                                 <connections>
                                     <action selector="addTask:" destination="tyZ-0M-hzO" eventType="touchUpInside" id="Rhy-ye-ZkI"/>
-                                    <segue destination="SNX-Ac-Gh7" kind="modal" id="qgA-5a-j1Q"/>
+                                    <segue destination="SNX-Ac-Gh7" kind="show" id="5PX-ZM-YtP"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gMH-79-1gH">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="AddToday'sTask" id="tYS-Lk-hWb">
-                                        <barButtonItem key="backBarButtonItem" title="back" id="pKu-yB-4FN"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ix-Cq-Yh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2244" y="169"/>
+            <point key="canvasLocation" x="1558" y="169"/>
         </scene>
         <!--Week tasks-->
         <scene sceneID="s1G-yl-Njh">
@@ -136,7 +136,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="weekTaskCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="weekTableCell" rowHeight="43" id="vZ5-37-cbu">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="weekTaskCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="weekTableCell" rowHeight="43" id="vZ5-37-cbu" customClass="WTaskTableViewCell" customModule="ToDo2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vZ5-37-cbu" id="z8f-82-ZVN">
@@ -146,29 +146,36 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="02T-QQ-ryz">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="QeE-UA-H6g">
+                                        <barButtonItem key="rightBarButtonItem" title="+" id="2ll-IM-Zpt">
+                                            <connections>
+                                                <segue destination="NtW-LN-F7a" kind="show" id="DKW-Vx-ChY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ThisWeekTask" id="q3r-hB-XtP">
-                        <barButtonItem key="rightBarButtonItem" title="+" id="Cud-dr-geY">
-                            <connections>
-                                <segue destination="NtW-LN-F7a" kind="modal" id="k4a-Mf-kYz"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="WeekTask" id="o9N-0o-im0"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="weekTabBar" destination="xgo-Sg-LVu" id="SEZ-N2-fMy"/>
                         <outlet property="weekTaskTable" destination="NZJ-0X-he9" id="Q7O-bq-MhQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="muy-RM-goF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1301.5999999999999" y="-623.83808095952031"/>
+            <point key="canvasLocation" x="462" y="-554"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="95Q-pq-oya">
             <objects>
-                <viewController id="NtW-LN-F7a" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WAddTodo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NtW-LN-F7a" customClass="WAddToDoViewController" customModule="ToDo2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i7R-MX-oHH"/>
                         <viewControllerLayoutGuide type="bottom" id="vP9-q1-Rbe"/>
@@ -198,21 +205,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
-                                    <segue destination="uEP-uh-KEM" kind="modal" id="PXd-8L-Vox"/>
+                                    <segue destination="uEP-uh-KEM" kind="show" id="JLQ-zW-E3O"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="bji-uh-CJe"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="uLC-oX-HoJ"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7VX-yP-sbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2165.5999999999999" y="-624.73763118440786"/>
+            <point key="canvasLocation" x="1558" y="-555"/>
         </scene>
         <!--TabBar-->
         <scene sceneID="D8B-Zj-ZvY">
             <objects>
-                <tabBarController restorationIdentifier="tabBarController" storyboardIdentifier="tabBarController" title="TabBar" automaticallyAdjustsScrollViewInsets="NO" id="T63-gP-NJs" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" title="TabBar" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T63-gP-NJs" customClass="TabbarViewController" customModule="ToDo2" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="yfu-fK-ipI">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -220,55 +231,17 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="XuG-G9-cuT" kind="relationship" relationship="viewControllers" id="FAi-FN-JMW"/>
-                        <segue destination="9VO-OG-gMf" kind="relationship" relationship="viewControllers" id="7jF-JU-Rk7"/>
+                        <segue destination="SNX-Ac-Gh7" kind="relationship" relationship="viewControllers" id="v4M-jD-gyM"/>
+                        <segue destination="uEP-uh-KEM" kind="relationship" relationship="viewControllers" id="rTh-nV-kbT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVE-Jz-QRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-692" y="169"/>
-        </scene>
-        <!--Today's tasks-->
-        <scene sceneID="tLi-ss-TPO">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9VO-OG-gMf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="Today's tasks" id="qxn-te-kLm"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="r9D-8X-crr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="SNX-Ac-Gh7" kind="relationship" relationship="rootViewController" id="Tyj-ic-yIq"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="148-9u-BSx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="362.39999999999998" y="168.6656671664168"/>
-        </scene>
-        <!--Week tasks-->
-        <scene sceneID="BUm-ZO-nKT">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XuG-G9-cuT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" title="Week tasks" id="xgo-Sg-LVu"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GhA-nm-Ubv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="uEP-uh-KEM" kind="relationship" relationship="rootViewController" id="0oA-KR-JQi"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b4b-3s-KA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="362.39999999999998" y="-623.83808095952031"/>
+            <point key="canvasLocation" x="-702" y="169"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qgA-5a-j1Q"/>
-        <segue reference="PXd-8L-Vox"/>
+        <segue reference="v4M-jD-gyM"/>
+        <segue reference="JLQ-zW-E3O"/>
     </inferredMetricsTieBreakers>
 </document>
