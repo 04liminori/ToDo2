@@ -14,10 +14,10 @@ class AddToDoViewController: UIViewController, UITextFieldDelegate, UITabBarDele
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var addButton: UIButton!
 
-    let date = Date()
-    let task = Task(value: ["name" : "", "done": false])
-    // デフォルトRealmを取得する
-    var realm = try! Realm()
+//    let date = Date()
+//    let task = Task(value: ["name" : "", "done": false])
+//    // デフォルトRealmを取得する
+//    var realm = try! Realm()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,16 +77,6 @@ class AddToDoViewController: UIViewController, UITextFieldDelegate, UITabBarDele
                     })
                 } catch {
                     print("Save is Faild")
-//                try! Task.realm.write {
-//                    Task.realm.add(task)
-//                    
-//                    func update(method: (() -> Void)) {
-//                        try! Task.realm.write {
-//                            method()
-//                        }
-//                    }
-//                }
-//                print("test: addTask pushed")
                 }
             }
         }

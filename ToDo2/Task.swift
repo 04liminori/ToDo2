@@ -11,6 +11,4 @@ import RealmSwift
 
 class Task: Object {
     dynamic var name = ""
-    dynamic var done = false
-
 }
