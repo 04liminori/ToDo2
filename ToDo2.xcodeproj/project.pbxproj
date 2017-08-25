@@ -11,8 +11,9 @@
 		420A6AFD1EE8318C009404BF /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429417451EE2E5700014962C /* RealmSwift.framework */; };
 		4221DF661EE2DD6C00222436 /* Pods_ToDo2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4221DF631EE2DD6C00222436 /* Pods_ToDo2.framework */; };
 		422217E11F28B65800C9731C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422217E01F28B65800C9731C /* Task.swift */; };
+		4233B37F1F4FEC4F00C5294E /* WeekTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4233B37E1F4FEC4F00C5294E /* WeekTableViewController.swift */; };
+		4233B3871F5059F900C5294E /* WeekTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4233B3861F5059F900C5294E /* WeekTask.swift */; };
 		423D5C261F48A64E00ECABEC /* WAddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D5C251F48A64E00ECABEC /* WAddToDoViewController.swift */; };
-		429115C91ED2431900D1B823 /* WeekTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429115C81ED2431900D1B823 /* WeekTasksViewController.swift */; };
 		429E37CD1F4B79D8003B5FDF /* TodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429E37CC1F4B79D8003B5FDF /* TodayTableViewController.swift */; };
 		42ECD85F1ECD971400E1E027 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECD85E1ECD971400E1E027 /* AppDelegate.swift */; };
 		42ECD8641ECD971400E1E027 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42ECD8621ECD971400E1E027 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		42ECD87F1ECD971400E1E027 /* ToDo2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECD87E1ECD971400E1E027 /* ToDo2UITests.swift */; };
 		42ECD88D1ECD9BCC00E1E027 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECD88C1ECD9BCC00E1E027 /* AddToDoViewController.swift */; };
 		C7FDFA8168716F7F822AC05D /* Pods_ToDo2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFE200FB2E97F62179816EC /* Pods_ToDo2UITests.framework */; };
+		CA089378530FE12A3E0382C1 /* Pods_ToDo2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAF6E29F069B04D36AA7734 /* Pods_ToDo2.framework */; };
 		CB0B4A1BCE84E71839462E74 /* Pods_ToDo2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5BB7D756DEC11BB2FCA60C /* Pods_ToDo2Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +65,9 @@
 		4221DF641EE2DD6C00222436 /* Pods_ToDo2Tests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_ToDo2Tests.framework; path = "Pods/../build/Debug-iphoneos/Pods_ToDo2Tests.framework"; sourceTree = "<group>"; };
 		4221DF651EE2DD6C00222436 /* Pods_ToDo2UITests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_ToDo2UITests.framework; path = "Pods/../build/Debug-iphoneos/Pods_ToDo2UITests.framework"; sourceTree = "<group>"; };
 		422217E01F28B65800C9731C /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		4233B37E1F4FEC4F00C5294E /* WeekTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekTableViewController.swift; sourceTree = "<group>"; };
+		4233B3861F5059F900C5294E /* WeekTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekTask.swift; sourceTree = "<group>"; };
 		423D5C251F48A64E00ECABEC /* WAddToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAddToDoViewController.swift; sourceTree = "<group>"; };
-		429115C81ED2431900D1B823 /* WeekTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekTasksViewController.swift; sourceTree = "<group>"; };
 		429417431EE2E56D0014962C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../Library/Developer/Xcode/DerivedData/ToDo2-dfooajmtauxlvgfvqqxuieywjtlo/Build/Products/Debug-iphonesimulator/Realm/Realm.framework"; sourceTree = "<group>"; };
 		429417451EE2E5700014962C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/ToDo2-dfooajmtauxlvgfvqqxuieywjtlo/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		429E37CC1F4B79D8003B5FDF /* TodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +97,7 @@
 				420A6AFD1EE8318C009404BF /* RealmSwift.framework in Frameworks */,
 				420A6AFC1EE83188009404BF /* Realm.framework in Frameworks */,
 				4221DF661EE2DD6C00222436 /* Pods_ToDo2.framework in Frameworks */,
+				CA089378530FE12A3E0382C1 /* Pods_ToDo2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +148,8 @@
 				422217E01F28B65800C9731C /* Task.swift */,
 				429E37CC1F4B79D8003B5FDF /* TodayTableViewController.swift */,
 				42ECD88C1ECD9BCC00E1E027 /* AddToDoViewController.swift */,
-				429115C81ED2431900D1B823 /* WeekTasksViewController.swift */,
+				4233B3861F5059F900C5294E /* WeekTask.swift */,
+				4233B37E1F4FEC4F00C5294E /* WeekTableViewController.swift */,
 				423D5C251F48A64E00ECABEC /* WAddToDoViewController.swift */,
 				42ECD8621ECD971400E1E027 /* Main.storyboard */,
 				42ECD8651ECD971400E1E027 /* Assets.xcassets */,
@@ -433,7 +438,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ToDo2/Pods-ToDo2-resources.sh\"\n";
 		};
 		A57FF9476CCCE73F35543856 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -487,12 +492,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				429115C91ED2431900D1B823 /* WeekTasksViewController.swift in Sources */,
 				423D5C261F48A64E00ECABEC /* WAddToDoViewController.swift in Sources */,
 				42ECD88D1ECD9BCC00E1E027 /* AddToDoViewController.swift in Sources */,
+				4233B3871F5059F900C5294E /* WeekTask.swift in Sources */,
 				422217E11F28B65800C9731C /* Task.swift in Sources */,
 				42ECD85F1ECD971400E1E027 /* AppDelegate.swift in Sources */,
 				429E37CD1F4B79D8003B5FDF /* TodayTableViewController.swift in Sources */,
+				4233B37F1F4FEC4F00C5294E /* WeekTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

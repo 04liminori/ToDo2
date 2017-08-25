@@ -14,11 +14,6 @@ class AddToDoViewController: UIViewController, UITextFieldDelegate, UITabBarDele
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var addButton: UIButton!
 
-//    let date = Date()
-//    let task = Task(value: ["name" : "", "done": false])
-//    // デフォルトRealmを取得する
-//    var realm = try! Realm()
-
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -56,13 +51,13 @@ class AddToDoViewController: UIViewController, UITextFieldDelegate, UITabBarDele
     }
     
     @IBAction func addTask(_ sender: AnyObject) {
-        if textField.text == "" {
-            let alertController = UIAlertController(title: "タイトルを入力してください", message: "", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alertController.addAction(defaultAction)
-            present(alertController, animated: true, completion: nil)
-        } else {
-            func save() {
+//        if textField.text == "" {
+//            let alertController = UIAlertController(title: "タイトルを入力してください", message: "", preferredStyle: .alert)
+//            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//            alertController.addAction(defaultAction)
+//            present(alertController, animated: true, completion: nil)
+//        } else {
+            //func save() {
                 let newTask = Task()
                 
                 // textFieldに入力したデータをnewTodoのtitleに代入
@@ -77,9 +72,10 @@ class AddToDoViewController: UIViewController, UITextFieldDelegate, UITabBarDele
                     })
                 } catch {
                     print("Save is Faild")
-                }
-            }
+//                }
+//            }
         }
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 

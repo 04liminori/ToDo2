@@ -9,12 +9,9 @@
 import UIKit
 import RealmSwift
 
-class TodayTableViewController: UITableViewController {
+class TodayTableViewController: UITableViewController, UITabBarDelegate {
     
     var tasks: Results<Task>!
-    
-    @IBOutlet weak var todayTable: UITableView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +47,18 @@ class TodayTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return tasks.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexpath: NSIndexPath)->UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "TodayCell")
+        
+        // todoItemに代入されたデータをobject:NSArrayに代入
+        let object = tasks[indexpath.row]
+        
+        //cellのtextLabelのtextにobjectのtitleプロパティを代入
+        cell.textLabel?.text = object.name
+        
+        return cell
     }
 
     // TableViewのCellの削除を行った際に、Realmに保存したデータを削除する

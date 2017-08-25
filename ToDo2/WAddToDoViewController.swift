@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
 
-class WAddToDoViewController: UIViewController {
+class WAddToDoViewController: UIViewController, UITabBarDelegate {
 
     @IBOutlet weak var WTextField: UITextField!
     @IBOutlet weak var WAddButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        WTextField.delegate = self as? UITextFieldDelegate
 
         // Do any additional setup after loading the view.
     }
@@ -22,6 +25,51 @@ class WAddToDoViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //キーボード以外タップでキーボード閉じる
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //非表示にする。
+        if(WTextField.isFirstResponder){
+            WTextField.resignFirstResponder()
+        }
+    }
+    
+    //改行でキーボード閉じる
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
+    @IBAction func addTask(_ sender: AnyObject) {
+        //        if textField.text == "" {
+        //            let alertController = UIAlertController(title: "タイトルを入力してください", message: "", preferredStyle: .alert)
+        //            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        //            alertController.addAction(defaultAction)
+        //            present(alertController, animated: true, completion: nil)
+        //        } else {
+        //func save() {
+        let newTask = Task()
+        
+        // textFieldに入力したデータをnewTodoのtitleに代入
+        newTask.name = WTextField.text!
+        
+        // 上記で代入したテキストデータを永続化するための処理
+        do{
+            let realm = try Realm()
+            try realm.write({ () -> Void in
+                realm.add(newTask)
+                print("Task Saved")
+            })
+        } catch {
+            print("Save is Faild")
+            //                }
+            //            }
+        }
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 

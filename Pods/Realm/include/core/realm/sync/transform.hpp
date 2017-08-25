@@ -119,7 +119,7 @@ public:
     /// to point to it with BinaryData. entry.changeset.size() always gives the
     /// size of the changeset.
     ///
-    /// \param begin_version end_version The range of versions to consider. If
+    /// \param begin_version, end_version The range of versions to consider. If
     /// `begin_version` is equal to `end_version`, this is the empty range. If
     /// `begin_version` is zero, it means that everything preceeding
     /// `end_version` is to be considered, which is again the empty range if
@@ -191,6 +191,7 @@ public:
 
 class TransformError; // Exception
 
+typedef std::function<bool(int)> TransformerCallback;
 
 class Transformer {
 public:
@@ -280,7 +281,8 @@ public:
     virtual size_t transform_remote_changeset(TransformHistory&,
                                               version_type current_local_version,
                                               RemoteChangeset changeset,
-                                              util::Buffer<char>& output_buffer) = 0;
+                                              util::Buffer<char>& output_buffer,
+                                              TransformerCallback& callback) = 0;
 
     virtual ~Transformer() noexcept {}
 };
