@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4209D3391F6147C000BDF4DE /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4209D3381F6147C000BDF4DE /* TodayTableViewCell.swift */; };
 		420A6AFC1EE83188009404BF /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429417431EE2E56D0014962C /* Realm.framework */; };
 		420A6AFD1EE8318C009404BF /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429417451EE2E5700014962C /* RealmSwift.framework */; };
 		4221DF661EE2DD6C00222436 /* Pods_ToDo2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4221DF631EE2DD6C00222436 /* Pods_ToDo2.framework */; };
@@ -61,6 +62,7 @@
 		1D5BB7D756DEC11BB2FCA60C /* Pods_ToDo2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDo2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AA3A779FB2AF19BFD5397D /* Pods-ToDo2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDo2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDo2/Pods-ToDo2.debug.xcconfig"; sourceTree = "<group>"; };
 		3BFE200FB2E97F62179816EC /* Pods_ToDo2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDo2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4209D3381F6147C000BDF4DE /* TodayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
 		4221DF631EE2DD6C00222436 /* Pods_ToDo2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_ToDo2.framework; path = "../../../Library/Developer/Xcode/DerivedData/ToDo2-dfooajmtauxlvgfvqqxuieywjtlo/Build/Products/Debug-iphonesimulator/Pods_ToDo2.framework"; sourceTree = "<group>"; };
 		4221DF641EE2DD6C00222436 /* Pods_ToDo2Tests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_ToDo2Tests.framework; path = "Pods/../build/Debug-iphoneos/Pods_ToDo2Tests.framework"; sourceTree = "<group>"; };
 		4221DF651EE2DD6C00222436 /* Pods_ToDo2UITests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_ToDo2UITests.framework; path = "Pods/../build/Debug-iphoneos/Pods_ToDo2UITests.framework"; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				422217E01F28B65800C9731C /* Task.swift */,
 				429E37CC1F4B79D8003B5FDF /* TodayTableViewController.swift */,
 				42ECD88C1ECD9BCC00E1E027 /* AddToDoViewController.swift */,
+				4209D3381F6147C000BDF4DE /* TodayTableViewCell.swift */,
 				4233B3861F5059F900C5294E /* WeekTask.swift */,
 				4233B37E1F4FEC4F00C5294E /* WeekTableViewController.swift */,
 				423D5C251F48A64E00ECABEC /* WAddToDoViewController.swift */,
@@ -499,6 +502,7 @@
 				42ECD85F1ECD971400E1E027 /* AppDelegate.swift in Sources */,
 				429E37CD1F4B79D8003B5FDF /* TodayTableViewController.swift in Sources */,
 				4233B37F1F4FEC4F00C5294E /* WeekTableViewController.swift in Sources */,
+				4209D3391F6147C000BDF4DE /* TodayTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,7 +657,6 @@
 				DEVELOPMENT_TEAM = PK5W92DG95;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/vendor",
 					$,
 					xcodebuild,
 					"-showBuildSettings",
@@ -675,7 +678,6 @@
 				DEVELOPMENT_TEAM = PK5W92DG95;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/vendor",
 					$,
 					xcodebuild,
 					"-showBuildSettings",

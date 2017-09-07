@@ -154,15 +154,26 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TodayCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodayCell" id="X8x-50-OkB">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X8x-50-OkB" id="bOZ-23-sWU">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="TodayCellLabel" tableViewCell="X8x-50-OkB" id="bOZ-23-sWU" customClass="TodayTableViewCell" customModule="ToDo2" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="TodayNameLabel" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIx-Ts-3Yi">
+                                            <rect key="frame" x="22" y="11" width="29" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <connections>
+                                        <outlet property="nameLabel" destination="IIx-Ts-3Yi" id="YDg-yx-wz3"/>
+                                    </connections>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="sZf-Y9-Ewe" id="rOR-gA-mTS"/>
-                            <outlet property="delegate" destination="sZf-Y9-Ewe" id="iJH-Pu-7wK"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="TodayTask" id="GOA-FV-hBt">
@@ -185,6 +196,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2uI-kE-A9M" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="NMp-7K-q9Q">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
