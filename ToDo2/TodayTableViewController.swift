@@ -19,6 +19,7 @@ class TodayTableViewController: UITableViewController, UITabBarDelegate {
         do{
             let realm = try Realm()
             tasks = realm.objects(Task.self)
+            print(tasks)
             tableView.reloadData()
         }catch{
             
@@ -50,11 +51,12 @@ class TodayTableViewController: UITableViewController, UITabBarDelegate {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexpath: NSIndexPath)->UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "TodayCell")
+        //let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "TodayCell")
         
         // todoItemに代入されたデータをobject:NSArrayに代入
         let object = tasks[indexpath.row]
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TodayCell") as! TodayTableViewCell
         //cellのtextLabelのtextにobjectのtitleプロパティを代入
         cell.textLabel?.text = object.name
         

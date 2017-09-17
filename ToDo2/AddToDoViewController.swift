@@ -69,13 +69,12 @@ class AddToDoViewController: UIViewController, UITextFieldDelegate, UITabBarDele
                     try realm.write({ () -> Void in
                         realm.add(newTask)
                         print("Task Saved")
+                        //print(newTask.name)
                     })
                 } catch {
                     print("Save is Faild")
-//                }
-//            }
         }
-        self.navigationController?.popToRootViewController(animated: true)
+                self.navigationController?.popToRootViewController(animated: true)
     }
     
 
