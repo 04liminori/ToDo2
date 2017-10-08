@@ -51,31 +51,30 @@ class AddToDoViewController: UIViewController, UITextFieldDelegate, UITabBarDele
     }
     
     @IBAction func addTask(_ sender: AnyObject) {
-//        if textField.text == "" {
-//            let alertController = UIAlertController(title: "タイトルを入力してください", message: "", preferredStyle: .alert)
-//            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//            alertController.addAction(defaultAction)
-//            present(alertController, animated: true, completion: nil)
-//        } else {
-            //func save() {
-                let newTask = Task()
-                
-                // textFieldに入力したデータをnewTodoのtitleに代入
-                newTask.name = textField.text!
-                
+        let newTask = Task()
+        // textFieldに入力したデータをnewTodoのtitleに代入
+        newTask.name = textField.text!
+        if textField.text == "" {
+            let alertController = UIAlertController(title: "タイトルを入力してください", message: "", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            present(alertController, animated: true, completion: nil)
+        } else {
+           // func save() {
                 // 上記で代入したテキストデータを永続化するための処理
                 do{
                     let realm = try Realm()
                     try realm.write({ () -> Void in
                         realm.add(newTask)
                         print("Task Saved")
-                        //print(newTask.name)
+                        print(newTask.name)
                     })
                 } catch {
                     print("Save is Faild")
-        }
+                }
                 self.navigationController?.popToRootViewController(animated: true)
-    }
+            }
+        }
     
 
     /*

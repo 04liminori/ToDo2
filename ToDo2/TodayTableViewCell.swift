@@ -2,7 +2,7 @@
 //  TodayTableViewCell.swift
 //  ToDo2
 //
-//  Created by fukumoriminori on 2017/09/07.
+//  Created by fukumoriminori on 2017/10/08.
 //  Copyright © 2017年 fukumoriminori. All rights reserved.
 //
 
@@ -10,8 +10,6 @@ import UIKit
 import RealmSwift
 
 class TodayTableViewCell: UITableViewCell {
-    
-    @IBOutlet var todayNameLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

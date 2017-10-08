@@ -24,19 +24,17 @@ class TodayTableViewController: UITableViewController, UITabBarDelegate {
         }catch{
             
         }
-    
+    }
     // 追加 画面が表示される際などにtableViewのデータを再読み込みする
-    func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
 
     override func didReceiveMemoryWarning() {
         didReceiveMemoryWarning()
@@ -45,20 +43,34 @@ class TodayTableViewController: UITableViewController, UITabBarDelegate {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+   /* override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return tasks.count
+        return Int(tasks.count)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexpath: NSIndexPath)->UITableViewCell {
-        //let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "TodayCell")
-        
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "TodayCell")
         // todoItemに代入されたデータをobject:NSArrayに代入
         let object = tasks[indexpath.row]
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodayCell") as! TodayTableViewCell
         //cellのtextLabelのtextにobjectのtitleプロパティを代入
         cell.textLabel?.text = object.name
+        
+        return cell
+    }*/
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1 // 任意の値に変更する ( 1 セクションあたりの行数 )
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return Int(tasks.count)
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TodayTableViewCell", for: indexPath as IndexPath as IndexPath) // reuseIdentifier を cell に設定した Identifier に書き換える
+        
+        // Configure the cell...
         
         return cell
     }
